@@ -34,7 +34,7 @@ const Dashboard = () => {
 			</atlas-main-nav>
 
 			<atlas-profile-control slot="profile-controls">
-				<atlas-avatar slot="image" src="/begula.jpg" />
+				<atlas-avatar slot="image" src="/cheems.jpg" />
 				<p slot="name">Good morning, Mishi Wasi</p>
 			</atlas-profile-control>
 
