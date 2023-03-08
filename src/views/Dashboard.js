@@ -1,4 +1,5 @@
 import "@cision/atlas-components"
+import "../components/StepperAlt"
 import Stepper from "../components/Stepper"
 
 const Dashboard = () => {
@@ -46,7 +47,8 @@ const Dashboard = () => {
 
 			<atlas-feed slot="feed"></atlas-feed>
 
-			<Stepper></Stepper>
+			<Stepper slot="content-area"></Stepper>
+			<stepper-alt></stepper-alt>
 
 		</atlas-application-frame>
 }
