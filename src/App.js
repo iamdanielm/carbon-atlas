@@ -1,12 +1,18 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [openTime, setOpenTime] = useState(false)
+  const [openTimezone, setOpenTimezone] = useState(false)
+
   return (
     <atlas-application-frame backdrop>
       <h1 slot="app-logo">Atlas-Carbon</h1>
       <atlas-dialog slot="backdrop" open blade>
-        <h1 slot="title">Create a new Query</h1>
-        <atlas-icon name="close" slot="dismissible"></atlas-icon>
+        <h2 slot="title">Create a new Query</h2>
+        <atlas-button kind="icon" slot="dismissible">
+          <atlas-icon name="close"></atlas-icon>
+        </atlas-button>
         <form className="atlas-form">
           <atlas-input-text required>
             <span slot="label">Full Name</span>
@@ -42,9 +48,55 @@ function App() {
             <span slot="label">Query Description</span>
           </atlas-input-textarea>
 
-          <bx-date-picker>
-            <bx-date-picker-input size="lg" kind="single" label-text="Deadline"> </bx-date-picker-input>
-          </bx-date-picker>
+          <div className="colspan">
+            <bx-date-picker>
+              <bx-date-picker-input
+                kind="from"
+                label-text="Deadline"
+                placeholder="mm/dd/yyyy"
+                size="lg"
+              >
+              </bx-date-picker-input>
+              <bx-date-picker-input
+                kind="to"
+                label-text="."
+                placeholder="mm/dd/yyyy"
+                size="lg"
+              >
+              </bx-date-picker-input>
+            </bx-date-picker>
+
+            <atlas-dropdown open={openTime} >
+              <atlas-input-text readonly slot="input">
+                <span slot="label">Time</span>
+                <atlas-button slot="suffix" kind="icon" onClick={() => setOpenTime(!openTime)}>
+                  <atlas-icon name="arrowheadDownward"></atlas-icon>
+                </atlas-button>
+              </atlas-input-text>
+
+              <ul slot="menu">
+                <li>🕧🕧 🕧 🕧 </li>
+                <li>🕧🕧 🕧 🕧 </li>
+                <li>🕧🕧 🕧 🕧 </li>
+                <li>🕧🕧 🕧 🕧 </li>
+              </ul>
+            </atlas-dropdown>
+
+            <atlas-dropdown open={openTimezone} >
+              <atlas-input-text readonly slot="input">
+                <span slot="label">Timezone</span>
+                <atlas-button slot="suffix" kind="icon" onClick={() => setOpenTimezone(!openTimezone)}>
+                  <atlas-icon name="arrowheadDownward"></atlas-icon>
+                </atlas-button>
+              </atlas-input-text>
+
+              <ul slot="menu">
+                <li>Brasília time</li>
+                <li>Central Time zone</li>
+                <li>Eastern Time zone</li>
+              </ul>
+            </atlas-dropdown>
+          </div>
 
           <atlas-input-chip-group class="colspan">
             <span slot="label">Select topics that relate to this query</span>
