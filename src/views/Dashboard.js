@@ -1,11 +1,12 @@
 import "@cision/atlas-components"
 import "../components/StepperAlt"
-import Stepper from "../components/Stepper"
+import "./Dashboard.css"
+import TagGroup from "../components/TagGroup"
 
 const Dashboard = () => {
 	return <atlas-application-frame>
 			<atlas-logo beta slot="app-logo"></atlas-logo>
-
+7
 			<atlas-main-nav slot="main-nav">
 				<atlas-main-nav-item>
 					<atlas-button kind="icon">
@@ -47,8 +48,7 @@ const Dashboard = () => {
 
 			<atlas-feed slot="feed"></atlas-feed>
 
-			<Stepper slot="content-area"></Stepper>
-			<stepper-alt></stepper-alt>
+			<TagGroup></TagGroup>
 
 		</atlas-application-frame>
 }
