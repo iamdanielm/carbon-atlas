@@ -1,0 +1,7 @@
+sp-tag[invalid] {
+    --spectrum-tag-top-to-avatar-medium: 10px;
+}
+
+sp-tag[invalid]::part(icon){
+    color: black;
+}
