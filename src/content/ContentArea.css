@@ -1,0 +1,28 @@
+/* HACKS 🙈 */
+
+#content-area atlas-avatar::part(initials) {
+    background-color: var(--atlas-color-primary-b500);
+    color: aliceblue;
+}
+
+atlas-avatar img {
+    width: auto;
+    height: 2em;
+}
+
+#dropdown-atlas {
+    height: 250px;
+}
+
+#ui5-badge::part(body) {
+    gap: 4px;
+}
+
+/* NOT YET DEVELOPED ATLAS COMPONENTS */
+
+.atlas-avatar-group {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 2em;
+}
