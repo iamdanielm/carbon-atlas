@@ -24,8 +24,6 @@ const ContentArea = () => {
                     <ui5-avatar>
                         <img src="/carpincho.jpg" alt="carpincho" />
                     </ui5-avatar>
-                    {/* Weird behaviour when using non-ui5 elements*/}
-                    {/* <atlas-avatar initials="MW" /> */}
                 </ui5-avatar-group>
             </atlas-tile-board-tile>
 
@@ -35,14 +33,17 @@ const ContentArea = () => {
                 <ui5-badge color-scheme="8">
                     <ui5-icon name="locked" slot="icon"></ui5-icon>
                 </ui5-badge>
-                
+
             </atlas-tile-board-tile>
 
             <atlas-tile-board-tile>
-                <ui5-select class="select">
+                <ui5-select class="select" value-state="Success">
                     <ui5-option icon="iphone">Phone</ui5-option>
-                    <ui5-option icon="ipad">Tablet</ui5-option>
+                    <ui5-option icon="ipad"><atlas-icon name="location">Microphone</atlas-icon></ui5-option>
                     <ui5-option icon="laptop" selected>Desktop</ui5-option>
+                    <ui5-option icon="meal"><div>Avocado</div></ui5-option>
+                    <ui5-option icon="meal">Mango</ui5-option>
+
                 </ui5-select>
             </atlas-tile-board-tile>
 
@@ -70,8 +71,9 @@ const ContentArea = () => {
             </atlas-tile-board-tile>
 
             <atlas-tile-board-tile>
-                <atlas-dropdown open id="dropdown-atlas">
+                <atlas-dropdown close id="dropdown-atlas">
                     <atlas-input-text slot="input">
+                    {/* <atlas-input-text onClick={(event) => event.target. } slot="input"> */}
                         <span slot="label">Pick a fruit</span>
                     </atlas-input-text>
                     <ul slot="menu">
@@ -89,11 +91,12 @@ const ContentArea = () => {
                     <h6 slot="prefix">12</h6>
                 </atlas-chip>
                 <atlas-chip>
+                    <ui5-avatar icon="employee"></ui5-avatar>
                     <h6 slot="prefix">🥕👞</h6>
                     <h1 slot="suffix">Felipe</h1>
                 </atlas-chip>
                 <atlas-chip>
-                    <atlas-icon icon="search"/>
+                    <atlas-icon name="search" />
                 </atlas-chip>
             </atlas-tile-board-tile>
         </atlas-tile-board>
